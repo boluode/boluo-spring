@@ -45,4 +45,13 @@ public class ScopeConfigTest {
         Map<String, Person> beansOfType = context.getBeansOfType(Person.class);
         System.out.println(beansOfType);
     }
+
+    @Test
+    public void importTest() {
+        System.out.println("IOC容器创建完成....");
+
+        for (String beanDefinitionName : context.getBeanDefinitionNames()) {
+            System.out.println(beanDefinitionName);
+        }
+    }
 }

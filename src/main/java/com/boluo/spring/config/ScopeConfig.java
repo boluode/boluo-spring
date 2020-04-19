@@ -1,11 +1,15 @@
 package com.boluo.spring.config;
 
+import com.boluo.spring.condition.BoluoImportSelector;
 import com.boluo.spring.condition.LinuxCondition;
 import com.boluo.spring.condition.MacCondition;
+import com.boluo.spring.model.Book;
 import com.boluo.spring.model.Person;
+import com.boluo.spring.model.Student;
 import org.springframework.context.annotation.*;
 
 @Configuration
+@Import({Book.class, Student.class, BoluoImportSelector.class})
 public class ScopeConfig {
 
     /**
