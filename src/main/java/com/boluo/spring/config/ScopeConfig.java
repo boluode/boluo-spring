@@ -4,6 +4,7 @@ import com.boluo.spring.condition.BoluoImportBeanDefinitionRegistrar;
 import com.boluo.spring.condition.BoluoImportSelector;
 import com.boluo.spring.condition.LinuxCondition;
 import com.boluo.spring.condition.MacCondition;
+import com.boluo.spring.model.BoluoFactoryBean;
 import com.boluo.spring.model.Book;
 import com.boluo.spring.model.Person;
 import com.boluo.spring.model.Student;
@@ -41,5 +42,10 @@ public class ScopeConfig {
     @Bean
     public Person linux() {
         return new Person("linux", 18);
+    }
+
+    @Bean
+    public BoluoFactoryBean boluoFactoryBean() {
+        return new BoluoFactoryBean();
     }
 }

@@ -54,4 +54,16 @@ public class ScopeConfigTest {
             System.out.println(beanDefinitionName);
         }
     }
+
+    @Test
+    public void boluoFactoryBean() {
+        Object boluoFactoryBean1 = context.getBean("boluoFactoryBean");
+        Object boluoFactoryBean2 = context.getBean("boluoFactoryBean");
+        System.out.println("bean的类型:" + boluoFactoryBean1.getClass());
+        System.out.println(boluoFactoryBean1 == boluoFactoryBean2);
+
+        // 获取工厂bean本身
+        Object boluoFactoryBean3 = context.getBean("&boluoFactoryBean");
+        System.out.println("bean的类型:" + boluoFactoryBean3.getClass());
+    }
 }
